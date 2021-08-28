@@ -53,7 +53,7 @@ public class ArquivoServices {
                 try {
                     organize(arquivo.getAbsolutePath());
                 } catch (DataNaoEncontradaException e) {
-                    System.out.println("Não foi possuível tratar o arquivo " + arquivo.getAbsolutePath() + " - Erro: " + e.getMessage());
+                    System.out.println("Não foi possível tratar o arquivo " + arquivo.getAbsolutePath() + " - Erro: " + e.getMessage());
                 }
             }
         }
@@ -91,7 +91,7 @@ public class ArquivoServices {
                 return getDataDeString(dataDoArquivo);
             }
         } catch (Exception e) {
-            //System.out.println("Arquivo '" + nomeAbsolutoDoArquivo + "' n�o possui data no nome do arquivo.");
+            //System.out.println("Arquivo '" + nomeAbsolutoDoArquivo + "' não possui data no nome do arquivo.");
         }
         return null;
      }
@@ -237,7 +237,7 @@ public class ArquivoServices {
                 dataArquivo = LocalDate.parse(dataDoArquivo, formatador);
                 break;
             } catch (DateTimeParseException ex) {
-                // simplesmente tente o novo padr�o.
+                // simplesmente tente o novo padrão.
             }
         }
         return dataArquivo;
@@ -267,7 +267,7 @@ public class ArquivoServices {
             nomeDoMes = "02. Fevereiro";
             break;
         case 3:
-            nomeDoMes = "03. Mar�o";
+            nomeDoMes = "03. Março";
             break;
         case 4:
             nomeDoMes = "04. Abril";
@@ -302,7 +302,7 @@ public class ArquivoServices {
 
     
     protected String getPastaDestinoAno(String pastaDestino, LocalDate data, int ano) {
-        String localidade = "\\" + getLocalidade(data); //<<< comentar em caso de n�o usar localidades
+        String localidade = "\\" + getLocalidade(data); //<<< comentar em caso de não usar localidades
         return pastaDestino +  localidade + "\\" + ano;
     }
 
@@ -323,7 +323,7 @@ public class ArquivoServices {
 
     protected String getPastaDestinoAnoMes(String pastaDestino, String mes, boolean isVideo) {
         if (isVideo) {
-            return pastaDestino + "\\" + mes + "\\V�deos";
+            return pastaDestino + "\\" + mes + "\\Vídeos";
         }
         return pastaDestino + "\\" + mes;
     }
